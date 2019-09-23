@@ -1,0 +1,26 @@
+{
+  "name": "sequelize-test",
+  "version": "1.0.0",
+  "description": "My divine Nuxt.js project",
+  "author": "Peter Akaliro",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.16.4",
+    "mysql2": "^1.7.0",
+    "nuxt": "^2.0.0",
+    "sequelize": "^5.19.0",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
