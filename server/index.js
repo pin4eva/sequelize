@@ -21,6 +21,8 @@ db.authenticate()
 
 const user = require("./Route/user");
 app.use("/api/user", user);
+const post = require("./Route/post");
+app.use("/api/post", post);
 // Import and Set Nuxt.js options
 const config = require("../nuxt.config.js");
 config.dev = process.env.NODE_ENV !== "production";

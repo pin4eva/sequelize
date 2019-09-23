@@ -15,5 +15,15 @@ Post.belongsToMany(Tag, { through: PostTag, unique: false });
 Tag.belongsToMany(Post, { through: PostTag, unique: false });
 User.belongsTo(User);
 
-// sequelize.sync({ force: true })
-// .then(()=>)
+sequelize
+  .sync({ force: true })
+  .then(() => console.log(`Created database and Table `))
+  .catch(err => {
+    console.log(`FAILED:${err}`);
+  });
+
+module.exports = {
+  User,
+  Post,
+  Tag
+};
