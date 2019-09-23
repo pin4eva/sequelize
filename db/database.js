@@ -2,11 +2,11 @@ require("dotenv");
 const Sequelize = require("sequelize").Sequelize;
 const dbConfig = require("./config");
 module.exports = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASS,
+  "jointhj3_lawathenaeum",
+  "jointhj3_peter",
+  "Admin123",
   {
-    host: process.env.DB_HOST,
+    host: "162.241.24.128",
     dialect: "mysql",
 
     pool: {

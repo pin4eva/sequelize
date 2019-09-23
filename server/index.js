@@ -10,19 +10,22 @@ db.authenticate()
   .then(() => console.log(`Connected to database...`))
   .catch(err => console.log(`FAILED TO CONNECT TO DATABASE: ${err}`));
 
-// sequelize
-//   .sync({ force: true })
-//   .then(() => {
-//     console.log(`Database & tables created`);
-//   })
-//   .catch(err => {
-//     console.log(`FAILED TO create DB successfully ${err}`);
-//   });
+db.sync({ force: true })
+  .then(() => {
+    console.log(`Database & tables created`);
+  })
+  .catch(err => {
+    console.log(`FAILED TO create DB successfully ${err}`);
+  });
+
+// Express Middleware,
+app.use(express.json());
 
 const user = require("./Route/user");
 app.use("/api/user", user);
 const post = require("./Route/post");
 app.use("/api/post", post);
+const cases = require("./Route/cases")
 // Import and Set Nuxt.js options
 const config = require("../nuxt.config.js");
 config.dev = process.env.NODE_ENV !== "production";
